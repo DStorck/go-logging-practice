@@ -1,0 +1,1 @@
+06:58:38.336 2015-01-07 11:58:38 at=info method=GET path=/images/sample.gif host=aaa.herokuapp.com fwd=“47.192.200.121/NX” dyno=web.1 connect=1ms service=744ms status=200 bytes=12268

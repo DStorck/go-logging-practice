@@ -8,6 +8,7 @@ import (
     "log"
     "os"
     "time"
+    "math/rand"
 )
 
 type Page struct {
@@ -60,16 +61,27 @@ func logwriter(w http.ResponseWriter, r*http.Request) {
   log.Println("This is a test log entry")
 }
 
-func tickerhandler(w http.ResponseWriter, r*http.Request) {
-  ticker := time.NewTicker(time.Millisecond * 1000)
-  go func() {
-      for t := range ticker.C {
-          fmt.Println("Tick at", t)
+func random_loghandler(w http.ResponseWriter, r*http.Request) {
+  //make array of files
+  log_files := [3]string{"apache_log.txt", "stack_trace.txt", "json_blob.txt" }
+  //filename := random file
+  filename := log_files[rand.Intn(len(log_files))]
+  random_logfile, err := ioutil.ReadFile(filename)
+  if err != nil {
+      fmt.Fprintf(w, "Denied.")
+  } else {
+      // fmt.Fprintf(w, string(log_data[:]) + "\n")
+
+      logfile, log_err := os.OpenFile("randomized_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+      if log_err != nil {
+        log.Fatal("error opening log file: %v", err)
       }
-  }()
-  time.Sleep(time.Millisecond * 10000)
-  ticker.Stop()
-  fmt.Println("Ticker stopped")
+      defer logfile.Close()
+      fmt.Fprintf(w, "Logs written to randomized_logs.txt")
+      log.SetOutput(logfile)
+      //log.Println(contents of f)
+      log.Println(string(random_logfile[:]))
+  }
 }
 
 func tickerloghandler(w http.ResponseWriter, r*http.Request) {
@@ -79,7 +91,7 @@ func tickerloghandler(w http.ResponseWriter, r*http.Request) {
         for t := range ticker.C {
             fmt.Println("Tick at", t)
             log.SetOutput(f)
-            log.Println("logggggggssssss")
+            log.Println("logs logs better > bad == good")
         }
     }()
     time.Sleep(time.Millisecond * 100000)
@@ -95,7 +107,7 @@ func main() {
     http.HandleFunc("/logs", loghandler)
     http.HandleFunc("/output", outputhandler)
     http.HandleFunc("/writelogs", logwriter)
-    http.HandleFunc("/ticker", tickerhandler)
     http.HandleFunc("/tickerlog", tickerloghandler)
+    http.HandleFunc("/random", random_loghandler)
     http.ListenAndServe(":8080", nil)
 }

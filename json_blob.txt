@@ -1,0 +1,12 @@
+{"module":"stream","logMessage":"exiting search","sessionId":"90D97000","customerId": "00B12CD0"
+  {
+      "baselineIntervals":[
+      "2014-03-11T23:00:00:000-07:00\/2014-03-12T05:00:00.000-07:00",
+      "2014-03-12T05:00:00.000-07:00\/2014-03-12T11:00:00.000-07:00"],
+      "meta":{
+        "type":
+        "timestamps",
+        "version": "1"
+      }
+  }
+}
