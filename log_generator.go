@@ -73,7 +73,7 @@ func tickerhandler(w http.ResponseWriter, r*http.Request) {
 }
 
 func tickerloghandler(w http.ResponseWriter, r*http.Request) {
-  ticker := time.NewTicker(time.Millisecond * 1000)
+  ticker := time.NewTicker(time.Millisecond * 10000)
   f, _ := os.OpenFile("tickerlogfile", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
     go func() {
         for t := range ticker.C {
@@ -82,7 +82,7 @@ func tickerloghandler(w http.ResponseWriter, r*http.Request) {
             log.Println("logggggggssssss")
         }
     }()
-    time.Sleep(time.Millisecond * 10000)
+    time.Sleep(time.Millisecond * 100000)
     ticker.Stop()
     fmt.Println("Ticker stopped")
     log.SetOutput(f)
@@ -91,7 +91,7 @@ func tickerloghandler(w http.ResponseWriter, r*http.Request) {
 }
 
 func main() {
-    http.HandleFunc("/love", handler)
+    http.HandleFunc("/", handler)
     http.HandleFunc("/logs", loghandler)
     http.HandleFunc("/output", outputhandler)
     http.HandleFunc("/writelogs", logwriter)

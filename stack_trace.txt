@@ -1,0 +1,110 @@
+2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1726 +0x44
+net/http.(*ServeMux).ServeHTTP(0x4e1240, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2022 +0x7f
+net/http.serverHandler.ServeHTTP(0xc42012e000, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2202 +0x7d
+net/http.(*conn).serve(0xc42012e080, 0x4c1960, 0xc420118240)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1579 +0x4b7
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2293 +0x44d
+2016/09/21 09:53:38 http: panic serving [::1]:56453: runtime error: index out of range
+goroutine 19 [running]:
+net/http.(*conn).serve.func1(0xc42012e100)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a270, 0xc4201380f0)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a270, 0xc4201380f0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1726 +0x44
+net/http.(*ServeMux).ServeHTTP(0x4e1240, 0x4c12e0, 0xc42011a270, 0xc4201380f0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2022 +0x7f
+net/http.serverHandler.ServeHTTP(0xc42012e000, 0x4c12e0, 0xc42011a270, 0xc4201380f0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2202 +0x7d
+net/http.(*conn).serve(0xc42012e100, 0x4c1960, 0xc420118380)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1579 +0x4b7
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2293 +0x44d
+2016/09/21 09:53:38 http: panic serving [::1]:56454: runtime error: index out of range
+goroutine 20 [running]:
+net/http.(*conn).serve.func1(0xc42012e580)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a340, 0xc4201381e0)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a340, 0xc4201381e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1726 +0x44
+net/http.(*ServeMux).ServeHTTP(0x4e1240, 0x4c12e0, 0xc42011a340, 0xc4201381e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2022 +0x7f
+net/http.serverHandler.ServeHTTP(0xc42012e000, 0x4c12e0, 0xc42011a340, 0xc4201381e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2202 +0x7d
+net/http.(*conn).serve(0xc42012e580, 0x4c1960, 0xc420118740)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1579 +0x4b7
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2293 +0x44d
+2016/09/21 09:53:38 http: panic serving [::1]:56455: runtime error: index out of range
+goroutine 21 [running]:
+net/http.(*conn).serve.func1(0xc42012e700)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a410, 0xc4201382d0)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a410, 0xc4201382d0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1726 +0x44
+net/http.(*ServeMux).ServeHTTP(0x4e1240, 0x4c12e0, 0xc42011a410, 0xc4201382d0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2022 +0x7f
+net/http.serverHandler.ServeHTTP(0xc42012e000, 0x4c12e0, 0xc42011a410, 0xc4201382d0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2202 +0x7d
+net/http.(*conn).serve(0xc42012e700, 0x4c1960, 0xc420118880)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1579 +0x4b7
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2293 +0x44d
+2016/09/21 09:53:41 http: panic serving [::1]:56456: runtime error: index out of range
+goroutine 22 [running]:
+net/http.(*conn).serve.func1(0xc42012e880)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a4e0, 0xc4201383c0)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a4e0, 0xc4201383c0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1726 +0x44
+net/http.(*ServeMux).ServeHTTP(0x4e1240, 0x4c12e0, 0xc42011a4e0, 0xc4201383c0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2022 +0x7f
+net/http.serverHandler.ServeHTTP(0xc42012e000, 0x4c12e0, 0xc42011a4e0, 0xc4201383c0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2202 +0x7d
+net/http.(*conn).serve(0xc42012e880, 0x4c1960, 0xc4201189c0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1579 +0x4b7
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2293 +0x44d
+2016/09/21 09:53:41 http: panic serving [::1]:56457: runtime error: index out of range
+goroutine 23 [running]:
+net/http.(*conn).serve.func1(0xc42012e900)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a5b0, 0xc4201384b0)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a5b0, 0xc4201384b0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1726 +0x44
+net/http.(*ServeMux).ServeHTTP(0x4e1240, 0x4c12e0, 0xc42011a5b0, 0xc4201384b0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2022 +0x7f
+net/http.serverHandler.ServeHTTP(0xc42012e000, 0x4c12e0, 0xc42011a5b0, 0xc4201384b0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2202 +0x7d
+net/http.(*conn).serve(0xc42012e900, 0x4c1960, 0xc420118a80)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1579 +0x4b7
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2293 +0x44d
+2016/09/21 09:53:41 http: panic serving [::1]:56458: runtime error: index out of range
+goroutine 24 [running]:
