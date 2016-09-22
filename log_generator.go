@@ -9,14 +9,15 @@ import (
     "time"
     "math/rand"
     "io"
+    "strconv"
+    // "net/url"
+    // "net"
 )
 
 func create_filename_slice() []string {
   files, err := ioutil.ReadDir("log_seeds")
   filename_slice := make([]string, 0)
-	if err != nil {
-		log.Fatal(err)
-	}
+	check(err)
 
 	for _, file := range files {
 		fmt.Println(file.Name())
@@ -27,52 +28,40 @@ func create_filename_slice() []string {
   return filename_slice
 }
 
-func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
-  log_files := [4]string{"apache_log.txt", "stack_trace.txt", "json_blob.txt" , "logseeds.txt"}
-  filename := log_files[rand.Intn(len(log_files))]
-  random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
-  ticker := time.NewTicker(time.Millisecond * 10000)
-  if err != nil {
-      fmt.Fprintf(w, "Denied.")
-  } else {
-    random_tick_logfile, log_err := os.OpenFile("random_tick_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
-    if log_err != nil {
-      log.Fatal("error opening log file: %v", err)
-    } else {
-      go func() {
-          for t := range ticker.C {
-              fmt.Println("Tick at", t)
-              log.SetOutput(random_tick_logfile)
-              log.Println(string(random_logfile[:]))
-          }
-      }()
-      time.Sleep(time.Millisecond * 100000)
-      ticker.Stop()
-      fmt.Println("Ticker stopped")
-      }
-    }
+func get_random_logfile() string {
+  all_filenames := create_filename_slice()
+  filename := all_filenames[rand.Intn(len(all_filenames))]
+  return filename
 }
 
-
+func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
+  filename := get_random_logfile()
+  random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
+  ticker := time.NewTicker(time.Millisecond * 10000)
+  check(err)
+  random_tick_logfile, log_err := os.OpenFile("random_tick_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+  check(log_err)
+  go func() {
+      for t := range ticker.C {
+          fmt.Println("Tick at", t)
+          log.SetOutput(random_tick_logfile)
+          log.Println(string(random_logfile[:]))
+      }
+  }()
+  time.Sleep(time.Millisecond * 100000)
+  ticker.Stop()
+}
 
 func random_loghandler(w http.ResponseWriter, r*http.Request) {
-  all_filenames := create_filename_slice()
-  // log_files := [4]string{"apache_log.txt", "stack_trace.txt", "json_blob.txt" , "logseeds.txt"}
-  filename := all_filenames[rand.Intn(len(all_filenames))]
-  // filename := log_files[rand.Intn(len(log_files))]
+  filename := get_random_logfile()
   random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
-  if err != nil {
-      fmt.Fprintf(w, "Denied.")
-  } else {
-      logfile, log_err := os.OpenFile("randomized_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
-      if log_err != nil {
-        log.Fatal("error opening log file: %v", err)
-      }
-      defer logfile.Close()
-      fmt.Fprintf(w, "Logs written to randomized_logs.txt from %s", filename)
-      log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
-      log.Println(string(random_logfile[:]))
-  }
+  check(err)
+    logfile, log_err := os.OpenFile("randomized_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+    check(log_err)
+    defer logfile.Close()
+    fmt.Fprintf(w, "Logs written to randomized_logs.txt from %s", filename)
+    log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
+    log.Println(string(random_logfile[:]))
 }
 
 func tickerloghandler(w http.ResponseWriter, r*http.Request) {
@@ -87,12 +76,28 @@ func tickerloghandler(w http.ResponseWriter, r*http.Request) {
     }()
     time.Sleep(time.Millisecond * 100000)
     ticker.Stop()
-    fmt.Println("Ticker stopped")
     log.SetOutput(f)
     log.Println("all done for now...")
 }
 
+func batchhandler(w http.ResponseWriter, r*http.Request){
+  str_number := r.URL.Query().Get("n")
+  num, err := strconv.Atoi(str_number)
+  fmt.Println(str_number)
+  if err != nil {
+    num = 20
+    fmt.Println(num)
+  }
+}
+
+func check(err error) {
+  if err != nil {
+        panic(err)
+  }
+}
+
 func main() {
+    http.HandleFunc("/batch", batchhandler) // expecting ?n= number
     http.HandleFunc("/tickfile", random_with_ticker_handler)
     http.HandleFunc("/tickerlog", tickerloghandler)
     http.HandleFunc("/random", random_loghandler)
