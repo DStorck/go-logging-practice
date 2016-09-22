@@ -52,17 +52,6 @@ func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
   ticker.Stop()
 }
 
-func random_loghandler(w http.ResponseWriter, r*http.Request) {
-  filename := get_random_logfile()
-  random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
-  check(err)
-    logfile, log_err := os.OpenFile("randomized_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
-    check(log_err)
-    defer logfile.Close()
-    fmt.Fprintf(w, "Logs written to randomized_logs.txt from %s", filename)
-    log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
-    log.Println(string(random_logfile[:]))
-}
 
 func tickerloghandler(w http.ResponseWriter, r*http.Request) {
   ticker := time.NewTicker(time.Millisecond * 10000)
@@ -80,13 +69,34 @@ func tickerloghandler(w http.ResponseWriter, r*http.Request) {
     log.Println("all done for now...")
 }
 
+func random_loghandler(w http.ResponseWriter, r*http.Request) {
+  filename := get_random_logfile()
+  random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
+  check(err)
+  logfile, log_err := os.OpenFile("randomized_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+  check(log_err)
+  // defer logfile.Close()
+  fmt.Fprintf(w, "Logs written to randomized_logs.txt from %s", filename)
+  log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
+  log.Println(string(random_logfile[:]))
+}
+
 func batchhandler(w http.ResponseWriter, r*http.Request){
+  logfile, log_err := os.OpenFile("batchlogs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
   str_number := r.URL.Query().Get("n")
-  num, err := strconv.Atoi(str_number)
   fmt.Println(str_number)
+  num, err := strconv.Atoi(str_number)
+  check(log_err)
   if err != nil {
     num = 20
     fmt.Println(num)
+  }
+  for i := 0; i < num ; i++ {
+    filename := get_random_logfile()
+    random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
+    check(err)
+    log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
+    log.Println(string(random_logfile[:]))
   }
 }
 

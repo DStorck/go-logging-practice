@@ -1,0 +1,12 @@
+2016/09/22 14:45:36 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+
+2016/09/22 14:45:36 06:58:38.336 2015-01-07 11:58:38 at=info method=GET path=/images/sample.gif host=aaa.herokuapp.com fwd=“47.192.200.121/NX” dyno=web.1 connect=1ms service=744ms status=200 bytes=12268
+
