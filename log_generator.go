@@ -1,7 +1,6 @@
 package main
 
 import (
-    "fmt"
     "net/http"
   	"io/ioutil"
     "log"
@@ -32,20 +31,7 @@ func get_random_logfile() string {
   return filename
 }
 
-
-// start a function that will push one log each (10 seconds) for 100 seconds
-func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
-  ticker := time.NewTicker(time.Millisecond * 10000)
-  go func() {
-      for t := range ticker.C {
-        append_logfile()
-        fmt.Println("Tick at", t)
-      }
-  }()
-  time.Sleep(time.Millisecond * 100000)
-  ticker.Stop()
-}
-
+// append logfile with random log file contents
 func append_logfile() {
   filename := get_random_logfile()
   random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
@@ -54,13 +40,26 @@ func append_logfile() {
   check(log_err)
   log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
   log.Println("Log Entry #", counter, "\n", string(random_logfile[:]))
-  fmt.Println("counter: " , counter)
   counter += 1
 }
 
+// start a function that will push one log each (10 seconds) for 100 seconds
+func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
+  ticker := time.NewTicker(time.Millisecond * 10000)
+  go func() {
+      for range ticker.C {
+        append_logfile()
+      }
+  }()
+  time.Sleep(time.Millisecond * 100000)
+  ticker.Stop()
+}
+
+// add contents of one random file to all_logs.txt
 func random_loghandler(w http.ResponseWriter, r*http.Request) {
   append_logfile()
 }
+
 
 // user can request a certain number of logs using batch?n=integer, will default to 20 if number not given
 func batchhandler(w http.ResponseWriter, r*http.Request){
