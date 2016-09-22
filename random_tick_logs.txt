@@ -1,0 +1,100 @@
+2016/09/22 10:57:00 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+
+2016/09/22 10:57:04 [Fri Dec 16 01:46:23 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /home/test/
+[Fri Dec 16 01:54:34 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /apache/web-data/test2
+[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header
+[Mon Dec 19 23:02:01 2005] [error] [client 1.2.3.4] user test: authentication failure for "/~dcid/test1": Password Mismatch
+
+2016/09/22 10:57:10 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+
+2016/09/22 10:57:14 [Fri Dec 16 01:46:23 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /home/test/
+[Fri Dec 16 01:54:34 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /apache/web-data/test2
+[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header
+[Mon Dec 19 23:02:01 2005] [error] [client 1.2.3.4] user test: authentication failure for "/~dcid/test1": Password Mismatch
+
+2016/09/22 10:57:20 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+
+2016/09/22 10:57:24 [Fri Dec 16 01:46:23 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /home/test/
+[Fri Dec 16 01:54:34 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /apache/web-data/test2
+[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header
+[Mon Dec 19 23:02:01 2005] [error] [client 1.2.3.4] user test: authentication failure for "/~dcid/test1": Password Mismatch
+
+2016/09/22 10:57:30 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+
+2016/09/22 10:57:34 [Fri Dec 16 01:46:23 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /home/test/
+[Fri Dec 16 01:54:34 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /apache/web-data/test2
+[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header
+[Mon Dec 19 23:02:01 2005] [error] [client 1.2.3.4] user test: authentication failure for "/~dcid/test1": Password Mismatch
+
+2016/09/22 10:57:40 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+
+2016/09/22 10:57:44 [Fri Dec 16 01:46:23 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /home/test/
+[Fri Dec 16 01:54:34 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /apache/web-data/test2
+[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header
+[Mon Dec 19 23:02:01 2005] [error] [client 1.2.3.4] user test: authentication failure for "/~dcid/test1": Password Mismatch
+
+2016/09/22 10:57:50 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+
+2016/09/22 10:57:54 [Fri Dec 16 01:46:23 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /home/test/
+[Fri Dec 16 01:54:34 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /apache/web-data/test2
+[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header
+[Mon Dec 19 23:02:01 2005] [error] [client 1.2.3.4] user test: authentication failure for "/~dcid/test1": Password Mismatch
+
+2016/09/22 10:58:00 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
+	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
+net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
+
