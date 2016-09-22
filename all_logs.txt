@@ -1,0 +1,166 @@
+2016/09/22 16:16:19 Log Entry # 24 
+ Processing ArticlesController#create (for 127.0.0.1 at 2008-09-08 11:52:54) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMDY5MWU1M2I1ZDRjODBlMzkyMWI1OTg2NWQyNzViZjYiCmZsYXNoSUM6J0FjdGl
+vbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--b18cd92fba90eacf8137e5f6b3b06c4d724596a4
+  Parameters: {"commit"=>"Create", "article"=>{"title"=>"Debugging Rails",
+ "body"=>"I'm learning how to print in logs!!!", "published"=>"0"},
+ "authenticity_token"=>"2059c1286e93402e389127b1153204e0d1e275dd", "action"=>"create", "controller"=>"articles"}
+New article: {"updated_at"=>nil, "title"=>"Debugging Rails", "body"=>"I'm learning how to print in logs!!!",
+ "published"=>false, "created_at"=>nil}
+Article should be valid: true
+  Article Create (0.000443)   INSERT INTO "articles" ("updated_at", "title", "body", "published",
+ "created_at") VALUES('2008-09-08 14:52:54', 'Debugging Rails',
+ 'I''m learning how to print in logs!!!', 'f', '2008-09-08 14:52:54')
+The article was saved and now the user is going to be redirected...
+Redirected to # Article:0x20af760>
+Completed in 0.01224 (81 reqs/sec) | DB: 0.00044 (3%) | 302 Found [http://localhost/articles]
+
+2016/09/22 16:16:36 Log Entry # 25 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
+2016/09/22 16:16:46 Log Entry # 26 
+ {"module":"stream","logMessage":"exiting search","sessionId":"90D97000","customerId": "00B12CD0"
+  {
+      "baselineIntervals":[
+      "2014-03-11T23:00:00:000-07:00\/2014-03-12T05:00:00.000-07:00",
+      "2014-03-12T05:00:00.000-07:00\/2014-03-12T11:00:00.000-07:00"],
+      "meta":{
+        "type":
+        "timestamps",
+        "version": "1"
+      }
+  }
+}
+
+2016/09/22 16:16:52 Log Entry # 27 
+ {"module":"stream","logMessage":"exiting search","sessionId":"90D97000","customerId": "00B12CD0"
+  {
+      "baselineIntervals":[
+      "2014-03-11T23:00:00:000-07:00\/2014-03-12T05:00:00.000-07:00",
+      "2014-03-12T05:00:00.000-07:00\/2014-03-12T11:00:00.000-07:00"],
+      "meta":{
+        "type":
+        "timestamps",
+        "version": "1"
+      }
+  }
+}
+
+2016/09/22 16:16:56 Log Entry # 28 
+ Processing ArticlesController#create (for 127.0.0.1 at 2008-09-08 11:52:54) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMDY5MWU1M2I1ZDRjODBlMzkyMWI1OTg2NWQyNzViZjYiCmZsYXNoSUM6J0FjdGl
+vbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--b18cd92fba90eacf8137e5f6b3b06c4d724596a4
+  Parameters: {"commit"=>"Create", "article"=>{"title"=>"Debugging Rails",
+ "body"=>"I'm learning how to print in logs!!!", "published"=>"0"},
+ "authenticity_token"=>"2059c1286e93402e389127b1153204e0d1e275dd", "action"=>"create", "controller"=>"articles"}
+New article: {"updated_at"=>nil, "title"=>"Debugging Rails", "body"=>"I'm learning how to print in logs!!!",
+ "published"=>false, "created_at"=>nil}
+Article should be valid: true
+  Article Create (0.000443)   INSERT INTO "articles" ("updated_at", "title", "body", "published",
+ "created_at") VALUES('2008-09-08 14:52:54', 'Debugging Rails',
+ 'I''m learning how to print in logs!!!', 'f', '2008-09-08 14:52:54')
+The article was saved and now the user is going to be redirected...
+Redirected to # Article:0x20af760>
+Completed in 0.01224 (81 reqs/sec) | DB: 0.00044 (3%) | 302 Found [http://localhost/articles]
+
+2016/09/22 16:17:06 Log Entry # 29 
+ 06:58:38.336 2015-01-07 11:58:38 at=info method=GET path=/images/sample.gif host=aaa.herokuapp.com fwd=“47.192.200.121/NX” dyno=web.1 connect=1ms service=744ms status=200 bytes=12268
+
+2016/09/22 16:17:16 Log Entry # 30 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
+2016/09/22 16:17:21 Log Entry # 31 
+ {"module":"stream","logMessage":"exiting search","sessionId":"90D97000","customerId": "00B12CD0"
+  {
+      "baselineIntervals":[
+      "2014-03-11T23:00:00:000-07:00\/2014-03-12T05:00:00.000-07:00",
+      "2014-03-12T05:00:00.000-07:00\/2014-03-12T11:00:00.000-07:00"],
+      "meta":{
+        "type":
+        "timestamps",
+        "version": "1"
+      }
+  }
+}
+
+2016/09/22 16:17:21 Log Entry # 32 
+ 06:58:38.336 2015-01-07 11:58:38 at=info method=GET path=/images/sample.gif host=aaa.herokuapp.com fwd=“47.192.200.121/NX” dyno=web.1 connect=1ms service=744ms status=200 bytes=12268
+
+2016/09/22 16:17:21 Log Entry # 33 
+ 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+
+2016/09/22 16:17:26 Log Entry # 34 
+ 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+
+2016/09/22 16:17:36 Log Entry # 35 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
+2016/09/22 16:17:46 Log Entry # 36 
+ [Fri Dec 16 01:46:23 2005] [warning] [client 1.2.3.4] Directory index forbidden by rule: /home/test/
+[Fri Dec 16 01:54:34 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /apache/web-data/test2
+[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header
+[Mon Dec 19 23:02:01 2005] [error] [client 1.2.3.4] user test: authentication failure for "/~dcid/test1": Password Mismatch
+
+2016/09/22 16:17:56 Log Entry # 37 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
+2016/09/22 16:18:06 Log Entry # 38 
+ {"module":"stream","logMessage":"exiting search","sessionId":"90D97000","customerId": "00B12CD0"
+  {
+      "baselineIntervals":[
+      "2014-03-11T23:00:00:000-07:00\/2014-03-12T05:00:00.000-07:00",
+      "2014-03-12T05:00:00.000-07:00\/2014-03-12T11:00:00.000-07:00"],
+      "meta":{
+        "type":
+        "timestamps",
+        "version": "1"
+      }
+  }
+}
+

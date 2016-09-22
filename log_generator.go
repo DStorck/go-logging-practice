@@ -32,58 +32,45 @@ func get_random_logfile() string {
   return filename
 }
 
+
 // start a function that will push one log each (10 seconds) for 100 seconds
 func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
   ticker := time.NewTicker(time.Millisecond * 10000)
-  random_tick_logfile, log_err := os.OpenFile("random_tick_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
-  check(log_err)
   go func() {
       for t := range ticker.C {
-        filename := get_random_logfile()
-        random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
-        check(err)
+        append_logfile()
         fmt.Println("Tick at", t)
-        log.SetOutput(random_tick_logfile)
-        log.Println("Log Entry #", counter, "\n", string(random_logfile[:]))
-        fmt.Println("counter: ", counter)
-        counter += 1
       }
   }()
   time.Sleep(time.Millisecond * 100000)
   ticker.Stop()
 }
 
-// function that pushes one random log to a file
-func random_loghandler(w http.ResponseWriter, r*http.Request) {
+func append_logfile() {
   filename := get_random_logfile()
   random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
   check(err)
-  logfile, log_err := os.OpenFile("randomized_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+  logfile, log_err := os.OpenFile("all_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
   check(log_err)
-  fmt.Fprintf(w, "Logs written to randomized_logs.txt from %s", filename)
   log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
   log.Println("Log Entry #", counter, "\n", string(random_logfile[:]))
   fmt.Println("counter: " , counter)
   counter += 1
 }
 
+func random_loghandler(w http.ResponseWriter, r*http.Request) {
+  append_logfile()
+}
+
 // user can request a certain number of logs using batch?n=integer, will default to 20 if number not given
 func batchhandler(w http.ResponseWriter, r*http.Request){
-  logfile, log_err := os.OpenFile("batchlogs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
   str_number := r.URL.Query().Get("n")
   num, err := strconv.Atoi(str_number)
-  check(log_err)
   if err != nil {
     num = 20
   }
   for i := 0; i < num ; i++ {
-    filename := get_random_logfile()
-    random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
-    check(err)
-    log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
-    log.Println("Log Entry #", counter, "\n", string(random_logfile[:]))
-    fmt.Println("counter: ", counter)
-    counter += 1
+    append_logfile()
   }
 }
 
