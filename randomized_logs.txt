@@ -1,76 +1,20 @@
-
-2016/09/22 11:24:59 {"module":"stream","logMessage":"exiting search","sessionId":"90D97000","customerId": "00B12CD0"
-  {
-      "baselineIntervals":[
-      "2014-03-11T23:00:00:000-07:00\/2014-03-12T05:00:00.000-07:00",
-      "2014-03-12T05:00:00.000-07:00\/2014-03-12T11:00:00.000-07:00"],
-      "meta":{
-        "type":
-        "timestamps",
-        "version": "1"
-      }
-  }
-}
-
-2016/09/22 11:25:04 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+2016/09/22 15:29:58 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
 goroutine 18 [running]:
 net/http.(*conn).serve.func1(0xc42012e080)
 	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
 panic(0x2fbca0, 0xc42000c0e0)
 	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
-main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
-	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
-net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
 
-2016/09/22 11:25:06 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+2016/09/22 15:38:32 Log Entry # 1 
+ 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
 goroutine 18 [running]:
 net/http.(*conn).serve.func1(0xc42012e080)
 	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
 panic(0x2fbca0, 0xc42000c0e0)
 	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
-main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
-	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
-net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
 
-2016/09/22 11:25:08 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
-goroutine 18 [running]:
-net/http.(*conn).serve.func1(0xc42012e080)
-	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
-panic(0x2fbca0, 0xc42000c0e0)
-	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
-main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
-	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
-net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
-
-2016/09/22 11:25:10 {"module":"stream","logMessage":"exiting search","sessionId":"90D97000","customerId": "00B12CD0"
-  {
-      "baselineIntervals":[
-      "2014-03-11T23:00:00:000-07:00\/2014-03-12T05:00:00.000-07:00",
-      "2014-03-12T05:00:00.000-07:00\/2014-03-12T11:00:00.000-07:00"],
-      "meta":{
-        "type":
-        "timestamps",
-        "version": "1"
-      }
-  }
-}
-
-2016/09/22 11:25:12 [Fri Dec 16 01:46:23 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /home/test/
-[Fri Dec 16 01:54:34 2005] [error] [client 1.2.3.4] Directory index forbidden by rule: /apache/web-data/test2
-[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header
-[Mon Dec 19 23:02:01 2005] [error] [client 1.2.3.4] user test: authentication failure for "/~dcid/test1": Password Mismatch
-
-2016/09/22 14:20:12 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
-goroutine 18 [running]:
-net/http.(*conn).serve.func1(0xc42012e080)
-	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
-panic(0x2fbca0, 0xc42000c0e0)
-	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
-main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
-	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
-net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
-
-2016/09/22 14:20:15 Traceback (most recent call last):
+2016/09/22 15:38:45 Log Entry # 2 
+ Traceback (most recent call last):
   File "tb.py", line 15, in <module>
     a()
   File "tb.py", line 3, in a
@@ -80,35 +24,4 @@ net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc42013800
   File "tb.py", line 13, in c
     error()
 NameError: global name 'error' is not defined
-
-2016/09/22 14:25:23 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
-goroutine 18 [running]:
-net/http.(*conn).serve.func1(0xc42012e080)
-	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
-panic(0x2fbca0, 0xc42000c0e0)
-	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
-main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
-	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
-net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
-
-2016/09/22 14:25:25 Traceback (most recent call last):
-  File "tb.py", line 15, in <module>
-    a()
-  File "tb.py", line 3, in a
-    j=b(i)
-  File "tb.py", line 9, in b
-    c()
-  File "tb.py", line 13, in c
-    error()
-NameError: global name 'error' is not defined
-
-2016/09/22 14:25:27 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
-goroutine 18 [running]:
-net/http.(*conn).serve.func1(0xc42012e080)
-	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
-panic(0x2fbca0, 0xc42000c0e0)
-	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
-main.makeHandler.func1(0x4c12e0, 0xc42011a1a0, 0xc420138000)
-	/Users/deirdrestorck/Samsung/logging/log_generator.go:45 +0xb2
-net/http.HandlerFunc.ServeHTTP(0xc420114070, 0x4c12e0, 0xc42011a1a0, 0xc420138000)
 
