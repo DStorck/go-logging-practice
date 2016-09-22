@@ -3,7 +3,6 @@ package main
 import (
     "fmt"
     "net/http"
-    // "html/template"
   	"io/ioutil"
     "log"
     "os"
@@ -12,20 +11,26 @@ import (
     "io"
 )
 
-func outputhandler(w http.ResponseWriter, r *http.Request) {
-  file, err := ioutil.ReadFile("apache_log.txt") // For read access.
-  if err != nil {
-    http.Redirect(w, r, "/coffee", http.StatusFound)
-    } else {
-      log.Println(string(file[:]))
-      fmt.Fprintf(w, string(file[:]))
-    }
+func create_filename_slice() []string {
+  files, err := ioutil.ReadDir("log_seeds")
+  filename_slice := make([]string, 0)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, file := range files {
+		fmt.Println(file.Name())
+    filename_slice = append(filename_slice, file.Name())
+	}
+
+  fmt.Println(filename_slice)
+  return filename_slice
 }
 
 func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
   log_files := [4]string{"apache_log.txt", "stack_trace.txt", "json_blob.txt" , "logseeds.txt"}
   filename := log_files[rand.Intn(len(log_files))]
-  random_logfile, err := ioutil.ReadFile(filename)
+  random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
   ticker := time.NewTicker(time.Millisecond * 10000)
   if err != nil {
       fmt.Fprintf(w, "Denied.")
@@ -51,9 +56,11 @@ func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
 
 
 func random_loghandler(w http.ResponseWriter, r*http.Request) {
-  log_files := [4]string{"apache_log.txt", "stack_trace.txt", "json_blob.txt" , "logseeds.txt"}
-  filename := log_files[rand.Intn(len(log_files))]
-  random_logfile, err := ioutil.ReadFile(filename)
+  all_filenames := create_filename_slice()
+  // log_files := [4]string{"apache_log.txt", "stack_trace.txt", "json_blob.txt" , "logseeds.txt"}
+  filename := all_filenames[rand.Intn(len(all_filenames))]
+  // filename := log_files[rand.Intn(len(log_files))]
+  random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
   if err != nil {
       fmt.Fprintf(w, "Denied.")
   } else {
@@ -87,7 +94,6 @@ func tickerloghandler(w http.ResponseWriter, r*http.Request) {
 
 func main() {
     http.HandleFunc("/tickfile", random_with_ticker_handler)
-    http.HandleFunc("/output", outputhandler)
     http.HandleFunc("/tickerlog", tickerloghandler)
     http.HandleFunc("/random", random_loghandler)
     http.ListenAndServe(":8080", nil)
