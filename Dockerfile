@@ -1,6 +1,7 @@
 FROM golang
 
 ADD log_generator.go /
+ADD log_seeds/* /log_seeds
 
 RUN go build -o /log_generator /log_generator.go
 
