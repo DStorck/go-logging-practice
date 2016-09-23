@@ -15,7 +15,7 @@ var counter = 1
 
 // run through log_seeds folder and grab all file names, push into a slice
 func create_filename_slice() []string {
-  files, err := ioutil.ReadDir("log_seeds")
+  files, err := ioutil.ReadDir("/log_seeds")
   check(err)
   filename_slice := make([]string, 0)
 	for _, file := range files {
@@ -34,7 +34,7 @@ func get_random_logfile() string {
 // append logfile with random log file contents
 func append_logfile() {
   filename := get_random_logfile()
-  random_logfile, err := ioutil.ReadFile("log_seeds/" + filename)
+  random_logfile, err := ioutil.ReadFile("/log_seeds/" + filename)
   check(err)
   logfile, log_err := os.OpenFile("all_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
   check(log_err)
