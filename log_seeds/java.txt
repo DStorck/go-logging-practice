@@ -1,0 +1,5 @@
+java.lang.NullPointerException
+abc.investxa.presentation.controllers.UnixServerJobController.handleRequest(UnixServerJobController.java:66)
+org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:48)
+javax.servlet.http.HttpServlet.service(HttpServlet.java:690)
+org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:96)

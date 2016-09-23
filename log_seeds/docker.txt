@@ -1,0 +1,4 @@
+Reason:        Error
+1h        4m        79    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning        Unhealthy    Readiness probe failed: Get http://10.244.1.2:8081/readiness: dial tcp 10.244.1.2:8081: getsockopt: no route to host
+1h        10s        212    {kubelet 10.0.1.118}                    Warning        FailedSync    Error syncing pod, skipping: failed to "StartContainer" for "kubedns" with CrashLoopBackOff: "Back-off 5m0s restarting failed container=kubedns pod=kube-dns-v17-9d3dk_kube-system(1a47f8b7-7c2d-11e6-930f-061cfbe65c0b)"
+1h    10s    220    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning    BackOff    Back-off restarting failed docker container
