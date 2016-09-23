@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: log_generator
+  #namespace: laptop-local
+  labels:
+    app: log_generator
+spec:
+  containers:
+    - name: log_generator
+      image: quay.io/dstorck/log_generator:latest
+      ports:
+      - containerPort: 8080
