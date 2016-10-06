@@ -9,13 +9,14 @@ import (
     "math/rand"
     "io"
     "strconv"
+    "fmt"
 )
 
 var counter = 1
 
 // run through log_seeds folder and grab all file names, push into a slice
 func create_filename_slice() []string {
-  files, err := ioutil.ReadDir("/log_seeds")
+  files, err := ioutil.ReadDir("./log_seeds")
   check(err)
   filename_slice := make([]string, 0)
 	for _, file := range files {
@@ -34,9 +35,9 @@ func get_random_logfile() string {
 // append logfile with random log file contents
 func append_logfile() {
   filename := get_random_logfile()
-  random_logfile, err := ioutil.ReadFile("/log_seeds/" + filename)
+  random_logfile, err := ioutil.ReadFile("./log_seeds/" + filename)
   check(err)
-  logfile, log_err := os.OpenFile("/all_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+  logfile, log_err := os.OpenFile("all_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
   check(log_err)
   defer logfile.Close()
   log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
@@ -52,13 +53,15 @@ func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
         append_logfile()
       }
   }()
-  time.Sleep(time.Millisecond * 100000)
-  ticker.Stop()
+  // time.Sleep(time.Millisecond * 100000)
+  // ticker.Stop()
 }
 
 // add contents of one random file to all_logs.txt
 func random_loghandler(w http.ResponseWriter, r*http.Request) {
   append_logfile()
+  fmt.Fprintf(w, "Logs written to randomized_logs.txt.  Search for super-fantastic-amazing!\n")
+  fmt.Fprintf(w, "Logs total: %d", counter)
 }
 
 

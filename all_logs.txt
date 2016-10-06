@@ -1,0 +1,122 @@
+
+2016/10/06 14:17:40 Log Entry # 1 
+ Reason:        Error
+1h        4m        79    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning        Unhealthy    Readiness probe failed: Get http://10.244.1.2:8081/readiness: dial tcp 10.244.1.2:8081: getsockopt: no route to host
+1h        10s        212    {kubelet 10.0.1.118}                    Warning        FailedSync    Error syncing pod, skipping: failed to "StartContainer" for "kubedns" with CrashLoopBackOff: "Back-off 5m0s restarting failed container=kubedns pod=kube-dns-v17-9d3dk_kube-system(1a47f8b7-7c2d-11e6-930f-061cfbe65c0b)"
+1h    10s    220    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning    BackOff    Back-off restarting failed docker container
+
+2016/10/06 14:18:57 Log Entry # 2 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
+2016/10/06 14:18:57 Log Entry # 3 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
+2016/10/06 14:18:57 Log Entry # 4 
+ 2016/09/21 09:53:38 http: panic serving [::1]:56452: runtime error: index out of range
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc42012e080)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fbca0, 0xc42000c0e0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+
+2016/10/06 14:18:57 Log Entry # 5 
+ Reason:        Error
+1h        4m        79    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning        Unhealthy    Readiness probe failed: Get http://10.244.1.2:8081/readiness: dial tcp 10.244.1.2:8081: getsockopt: no route to host
+1h        10s        212    {kubelet 10.0.1.118}                    Warning        FailedSync    Error syncing pod, skipping: failed to "StartContainer" for "kubedns" with CrashLoopBackOff: "Back-off 5m0s restarting failed container=kubedns pod=kube-dns-v17-9d3dk_kube-system(1a47f8b7-7c2d-11e6-930f-061cfbe65c0b)"
+1h    10s    220    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning    BackOff    Back-off restarting failed docker container
+
+2016/10/06 14:20:12 Log Entry # 6 
+ Processing ArticlesController#create (for 127.0.0.1 at 2008-09-08 11:52:54) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMDY5MWU1M2I1ZDRjODBlMzkyMWI1OTg2NWQyNzViZjYiCmZsYXNoSUM6J0FjdGl
+vbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--b18cd92fba90eacf8137e5f6b3b06c4d724596a4
+  Parameters: {"commit"=>"Create", "article"=>{"title"=>"Debugging Rails",
+ "body"=>"I'm learning how to print in logs!!!", "published"=>"0"},
+ "authenticity_token"=>"2059c1286e93402e389127b1153204e0d1e275dd", "action"=>"create", "controller"=>"articles"}
+New article: {"updated_at"=>nil, "title"=>"Debugging Rails", "body"=>"I'm learning how to print in logs!!!",
+ "published"=>false, "created_at"=>nil}
+Article should be valid: true
+  Article Create (0.000443)   INSERT INTO "articles" ("updated_at", "title", "body", "published",
+ "created_at") VALUES('2008-09-08 14:52:54', 'Debugging Rails',
+ 'I''m learning how to print in logs!!!', 'f', '2008-09-08 14:52:54')
+The article was saved and now the user is going to be redirected...
+Redirected to # Article:0x20af760>
+Completed in 0.01224 (81 reqs/sec) | DB: 0.00044 (3%) | 302 Found [http://localhost/articles]
+
+2016/10/06 14:24:20 Log Entry # 1 
+ Reason:        Error
+1h        4m        79    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning        Unhealthy    Readiness probe failed: Get http://10.244.1.2:8081/readiness: dial tcp 10.244.1.2:8081: getsockopt: no route to host
+1h        10s        212    {kubelet 10.0.1.118}                    Warning        FailedSync    Error syncing pod, skipping: failed to "StartContainer" for "kubedns" with CrashLoopBackOff: "Back-off 5m0s restarting failed container=kubedns pod=kube-dns-v17-9d3dk_kube-system(1a47f8b7-7c2d-11e6-930f-061cfbe65c0b)"
+1h    10s    220    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning    BackOff    Back-off restarting failed docker container
+
+2016/10/06 14:24:22 Log Entry # 2 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
+2016/10/06 14:24:24 Log Entry # 3 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
+2016/10/06 14:30:18 Log Entry # 1 
+ Reason:        Error
+1h        4m        79    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning        Unhealthy    Readiness probe failed: Get http://10.244.1.2:8081/readiness: dial tcp 10.244.1.2:8081: getsockopt: no route to host
+1h        10s        212    {kubelet 10.0.1.118}                    Warning        FailedSync    Error syncing pod, skipping: failed to "StartContainer" for "kubedns" with CrashLoopBackOff: "Back-off 5m0s restarting failed container=kubedns pod=kube-dns-v17-9d3dk_kube-system(1a47f8b7-7c2d-11e6-930f-061cfbe65c0b)"
+1h    10s    220    {kubelet 10.0.1.118}    spec.containers{kubedns}    Warning    BackOff    Back-off restarting failed docker container
+
+2016/10/06 14:30:21 Log Entry # 2 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
+2016/10/06 14:30:23 Log Entry # 3 
+ Traceback (most recent call last):
+  File "tb.py", line 15, in <module>
+    a()
+  File "tb.py", line 3, in a
+    j=b(i)
+  File "tb.py", line 9, in b
+    c()
+  File "tb.py", line 13, in c
+    error()
+NameError: global name 'error' is not defined
+
