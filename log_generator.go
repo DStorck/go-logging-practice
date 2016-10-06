@@ -37,7 +37,7 @@ func append_logfile() {
   filename := get_random_logfile()
   random_logfile, err := ioutil.ReadFile("./log_seeds/" + filename)
   check(err)
-  logfile, log_err := os.OpenFile("all_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+  logfile, log_err := os.OpenFile("/all_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
   check(log_err)
   defer logfile.Close()
   log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
