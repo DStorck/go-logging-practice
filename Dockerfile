@@ -1,5 +1,8 @@
 FROM golang
 
+RUN mkdir var
+RUN mkdir var/log
+
 ADD log_generator.go /
 ADD log_seeds/* /log_seeds/
 
