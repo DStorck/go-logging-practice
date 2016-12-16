@@ -40,7 +40,8 @@ func append_logfile() {
   logfile, log_err := os.OpenFile("/var/log/all_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
   check(log_err)
   defer logfile.Close()
-  log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
+  // log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
+  log.SetOutput(io.MultiWriter(logfile))
   log.Println("Log Entry #", counter, "\n", string(random_logfile[:]))
   counter += 1
 }
