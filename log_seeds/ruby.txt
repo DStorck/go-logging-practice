@@ -13,3 +13,4 @@ Article should be valid: true
 The article was saved and now the user is going to be redirected...
 Redirected to # Article:0x20af760>
 Completed in 0.01224 (81 reqs/sec) | DB: 0.00044 (3%) | 302 Found [http://localhost/articles]
+Search for the term hatchimal
