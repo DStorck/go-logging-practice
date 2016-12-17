@@ -12,7 +12,7 @@ import (
     "fmt"
 )
 
-var counter = 1
+var counter = 0
 
 // run through log_seeds folder and grab all file names, push into a slice
 func create_filename_slice() []string {
