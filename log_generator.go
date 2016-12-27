@@ -39,11 +39,11 @@ func append_logfile() {
   check(err)
   logfile, log_err := os.OpenFile("/var/log/all_logs.txt", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
   check(log_err)
-  defer logfile.Close()
   // log.SetOutput(io.MultiWriter(logfile, os.Stdout, os.Stderr))
   log.SetOutput(io.MultiWriter(logfile))
   log.Println("Log Entry #", counter, "\n", string(random_logfile[:]))
   counter += 1
+  defer logfile.Close()
 }
 
 // start a function that will push one log each (10 seconds) for 100 seconds
@@ -61,7 +61,7 @@ func random_with_ticker_handler(w http.ResponseWriter, r*http.Request) {
 // add contents of one random file to all_logs.txt
 func random_loghandler(w http.ResponseWriter, r*http.Request) {
   append_logfile()
-  fmt.Fprintf(w, "Logs written to randomized_logs.txt.  Search for super-fantastic-amazing!\n")
+  fmt.Fprintf(w, "Logs written to all_logs.txt.  Search for super-fantastic-amazing!\n")
   fmt.Fprintf(w, "Logs total: %d", counter)
 }
 
