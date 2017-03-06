@@ -8,7 +8,7 @@ metadata:
     pod.beta.kubernetes.io/init-containers: '[
       {
         "name": "directory-prep",
-        "image": "quay.io/samsung_cnct/shared-logging-directory:0.3",
+        "image": "quay.io/samsung_cnct/shared-logging-directory:latest",
         "imagePullPolicy": "Always",
         "volumeMounts": [
           {
@@ -24,6 +24,7 @@ metadata:
             "name": "POD_NAME",
             "valueFrom": {
               "fieldRef": {
+                "apiVersion": "v1",
                 "fieldPath": "metadata.name"
               }
             }
@@ -31,6 +32,7 @@ metadata:
             "name": "POD_NAMESPACE",
             "valueFrom": {
               "fieldRef": {
+                "apiVersion": "v1",
                 "fieldPath": "metadata.namespace"
               }
             }
@@ -38,6 +40,7 @@ metadata:
             "name": "POD_IP",
             "valueFrom": {
               "fieldRef": {
+                "apiVersion": "v1", 
                 "fieldPath": "status.podIP"
               }
             }
